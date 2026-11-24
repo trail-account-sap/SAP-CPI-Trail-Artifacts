@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created with Liquid Technologies Online Tools 1.0 (https://www.liquid-technologies.com) -->
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="root">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="unbounded" name="Order">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element minOccurs="1" maxOccurs="unbounded" name="Header">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element  minOccurs="1" maxOccurs="unbounded"  name="ORDID"  type="xs:unsignedShort" />
+                    <xs:element name="CUSTID" type="xs:unsignedByte" />
+                    <xs:element name="NETVALUE" type="xs:unsignedShort" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="1" maxOccurs="unbounded" name="lineItems">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element maxOccurs="unbounded" name="Item">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element minOccurs="1" maxOccurs="unbounded" name="ITEMNO" type="xs:unsignedByte" />
+                          <xs:element minOccurs="1" maxOccurs="unbounded" name="MATID" type="xs:string" />
+                          <xs:element minOccurs="1" maxOccurs="unbounded" name="REQDAT" type="xs:string" />
+                          <xs:element minOccurs="1" maxOccurs="unbounded" name="ORDQTY" type="xs:unsignedShort" />
+                          <xs:element minOccurs="1" maxOccurs="unbounded" name="PRICE" type="xs:unsignedShort" />
+                          <xs:element minOccurs="1" maxOccurs="unbounded" name="AMOUNT" type="xs:unsignedShort" />
+                          <xs:element minOccurs="1" maxOccurs="unbounded" name="UNIT" type="xs:string" />
+                          <xs:element minOccurs="1" maxOccurs="unbounded" name="CURRENCY" type="xs:string" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
